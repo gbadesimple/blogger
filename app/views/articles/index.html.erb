@@ -9,12 +9,12 @@
 </ul>
 
 
-<h1> Create New Article </h1>
+<!-- <h1> Create New Article </h1> -->
 
 <ul id="new_articles">
     <% @articles.each do |article| %>
     <li>
-        <%= link_to "New Article", new_article_path, class: "new_article", id: "article_#{article.id}" %>
+        <%= link_to "Create New Article", new_article_path, class: "new_article", id: "article_#{article.id}" %>
     </li>
     <% end %>
 </ul>

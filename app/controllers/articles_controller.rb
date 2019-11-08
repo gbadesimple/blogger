@@ -9,6 +9,9 @@ class ArticlesController < ApplicationController
 
     def show
         @article = Article.find(params[:id])
+
+        @comment = Comment.new
+        @comment.article_id = @article.id
     end
 
     def new
@@ -18,7 +21,7 @@ class ArticlesController < ApplicationController
     def create
         @article = Article.new(
             title: params[:article][:title],
-            body: params[:article][:body])
+            body: params[:article][:body] )
         @article.save
 
         flash.notice = "Article '#{@article.title}' Created!"
@@ -32,7 +35,7 @@ class ArticlesController < ApplicationController
     end
 
     def destroy
-        @article = Article.find(params[:id])
+        @article = Article.new(params[:id])
         @article.destroy
 
         flash.notice = "Article '#{@article.title}' Deleted!"

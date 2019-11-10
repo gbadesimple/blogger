@@ -31,7 +31,7 @@ group :development do
   gem 'sqlite3'
 end
 
-group :test :production do
+group :production do
    gem 'pg', '~>0.21'
 end
 # Reduces boot times through caching; required in config/boot.rb

@@ -8,7 +8,7 @@ gem 'sorcery'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+gem 'sqlite3'
 # gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -27,7 +27,11 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-group :test, :production do
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
    gem 'pg', '~>0.21'
 end
 # Reduces boot times through caching; required in config/boot.rb
